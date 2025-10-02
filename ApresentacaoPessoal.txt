@@ -1,0 +1,73 @@
+using System;
+using System.Collections.Generic;
+
+namespace PortfolioTI
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Title = "Portfólio Interativo - Seu Nome";
+            Console.ForegroundColor = ConsoleColor.Cyan;
+
+            Console.WriteLine("========================================");
+            Console.WriteLine("   Bem-vindo ao Portfólio de [Seu Nome] ");
+            Console.WriteLine("========================================\n");
+
+            bool sair = false;
+            while (!sair)
+            {
+                Console.WriteLine("Escolha uma opção:");
+                Console.WriteLine("1 - Sobre Mim");
+                Console.WriteLine("2 - Habilidades");
+                Console.WriteLine("3 - Projetos");
+                Console.WriteLine("4 - Contato");
+                Console.WriteLine("0 - Sair");
+                Console.Write("\nOpção: ");
+
+                string opcao = Console.ReadLine();
+                Console.Clear();
+
+                switch (opcao)
+                {
+                    case "1":
+                        Console.WriteLine("👨 Sobre Mim\n");
+                        Console.WriteLine("Sou desenvolvedor de software com foco em C#, .NET e SQL.");
+                        Console.WriteLine("Tenho experiência em desenvolvimento backend, APIs REST e sistemas distribuídos.\n");
+                        break;
+
+                    case "2":
+                        Console.WriteLine("💡 Habilidades\n");
+                        List<string> skills = new List<string> { "C#", ".NET Core", "Entity Framework", "SQL Server", "APIs REST", "Azure", "Git" };
+                        foreach (var skill in skills)
+                            Console.WriteLine("- " + skill);
+                        Console.WriteLine();
+                        break;
+
+                    case "3":
+                        Console.WriteLine("📂 Projetos\n");
+                        Console.WriteLine("- Sistema de Gestão Financeira (C#, SQL Server)");
+                        Console.WriteLine("- API de Controle de Estoque (ASP.NET Core, EF)");
+                        Console.WriteLine("- Dashboard em Blazor para análise de vendas\n");
+                        break;
+
+                    case "4":
+                        Console.WriteLine("📧 Contato\n");
+                        Console.WriteLine("Email: seuemail@exemplo.com");
+                        Console.WriteLine("LinkedIn: linkedin.com/in/seunome");
+                        Console.WriteLine("GitHub: github.com/seunome\n");
+                        break;
+
+                    case "0":
+                        sair = true;
+                        Console.WriteLine("Encerrando... Obrigado por visitar meu portfólio!");
+                        break;
+
+                    default:
+                        Console.WriteLine("Opção inválida, tente novamente.\n");
+                        break;
+                }
+            }
+        }
+    }
+}
